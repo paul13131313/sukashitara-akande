@@ -87,41 +87,15 @@ const styles = {
     transition: 'transform 0.2s',
     border: 'none',
   },
-  settingsButton: {
-    position: 'absolute',
-    top: '100px',
-    right: '20px',
-    fontSize: '24px',
-    background: 'rgba(255,255,255,0.1)',
-    color: 'var(--text-dim)',
-    width: '44px',
-    height: '44px',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 3,
-    border: 'none',
-    transition: 'background 0.2s',
-  },
 };
 
-export default function TitleScreen({ onStart, onOpenSettings }) {
+export default function TitleScreen({ onStart }) {
   return (
     <div style={styles.container}>
       <div style={styles.curtainTop} />
       <div style={styles.curtainLeft} />
       <div style={styles.curtainRight} />
       <div style={styles.spotlight} />
-      <button
-        style={styles.settingsButton}
-        onClick={onOpenSettings}
-        onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
-        onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
-        aria-label="設定"
-      >
-        ⚙️
-      </button>
       <div style={styles.content}>
         <span style={styles.mic}>🎤</span>
         <h1 style={styles.title}>
