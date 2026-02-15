@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #1a1a2e;
+  --bg-light: #16213e;
+  --nice: #FF3366;
+  --ok: #FFB347;
+  --suka: #4A90D9;
+  --text: #FFFFFF;
+  --text-dim: rgba(255, 255, 255, 0.6);
+  --gold: #FFD700;
+  --font-heading: 'Yusei Magic', cursive;
+  --font-body: 'Zen Maru Gothic', serif;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* スポットライト背景 */
+.spotlight-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 50% 30%, rgba(255, 215, 0, 0.08), transparent),
+    radial-gradient(ellipse 300px 300px at 30% 60%, rgba(255, 51, 102, 0.05), transparent),
+    radial-gradient(ellipse 300px 300px at 70% 70%, rgba(74, 144, 217, 0.05), transparent),
+    var(--bg);
+  z-index: -1;
+}
+
+/* スクロールバー */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* アニメーション */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.1); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+@keyframes spotlight {
+  0%, 100% { opacity: 0.08; }
+  50% { opacity: 0.15; }
+}
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 51, 102, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(255, 51, 102, 0.7); }
+}
+@keyframes curtainReveal {
+  from { transform: scaleY(1); }
+  to { transform: scaleY(0); }
+}
